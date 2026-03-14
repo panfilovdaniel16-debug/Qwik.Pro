@@ -172,7 +172,7 @@ export default function Branding() {
         </p>
 
         {/* ─── Photo gallery ─── */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3">
           {galleryImages.map((img, i) => (
             <button
               key={img.src}
@@ -200,11 +200,14 @@ export default function Branding() {
               </div>
             </button>
           ))}
-        </div>
 
-        <p className="mt-5 text-center text-sm text-text-secondary">
-          Это лишь малая часть наших кейсов — остальные пришлём по&nbsp;запросу.
-        </p>
+          {/* CTA card — fills the last cell */}
+          <div className="rounded-2xl border border-border-accent bg-emerald-deep/60 aspect-square flex flex-col items-center justify-center text-center p-4">
+            <span className="text-3xl mb-2">50+</span>
+            <p className="text-sm font-semibold text-ivory leading-snug">кейсов</p>
+            <p className="mt-2 text-xs text-text-secondary leading-relaxed">Это лишь малая часть — остальные пришлём по&nbsp;запросу</p>
+          </div>
+        </div>
 
         {/* ─── Feature cards ─── */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
