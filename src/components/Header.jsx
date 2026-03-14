@@ -36,24 +36,60 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <a
-          href="#lead-form"
-          className="hidden lg:inline-flex items-center rounded-full border border-border-accent px-5 py-2 text-sm font-semibold text-ivory transition-colors hover:bg-white/5"
-        >
-          Заказать систему
-        </a>
+        {/* Desktop: phone + email + CTA */}
+        <div className="hidden lg:flex items-center gap-5">
+          {/* Phone */}
+          <a
+            href="tel:+79064968802"
+            className="flex items-center gap-2 text-sm text-text-secondary hover:text-ivory transition-colors group"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0 text-text-tertiary group-hover:text-ivory transition-colors">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+            +7 (906) 496-88-02
+          </a>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
-          aria-label="Меню"
-        >
-          <span className={`block h-0.5 w-6 bg-ivory transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
-          <span className={`block h-0.5 w-6 bg-ivory transition-opacity ${open ? 'opacity-0' : ''}`} />
-          <span className={`block h-0.5 w-6 bg-ivory transition-transform ${open ? '-translate-y-2 -rotate-45' : ''}`} />
-        </button>
+          {/* Email */}
+          <a
+            href="mailto:info@qwik.pro"
+            className="flex items-center gap-2 text-sm text-text-secondary hover:text-ivory transition-colors group"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0 text-text-tertiary group-hover:text-ivory transition-colors">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+            </svg>
+            info@qwik.pro
+          </a>
+
+          {/* CTA */}
+          <a
+            href="#lead-form"
+            className="inline-flex items-center rounded-full border border-border-accent px-5 py-2 text-sm font-semibold text-ivory transition-colors hover:bg-white/5"
+          >
+            Заказать систему
+          </a>
+        </div>
+
+        {/* Mobile: phone icon + hamburger */}
+        <div className="lg:hidden flex items-center gap-3">
+          <a
+            href="tel:+79064968802"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-ivory/8 border border-border-neutral text-text-secondary hover:text-ivory transition-colors"
+            aria-label="Позвонить"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
+          </a>
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex flex-col gap-1.5 p-2 cursor-pointer"
+            aria-label="Меню"
+          >
+            <span className={`block h-0.5 w-6 bg-ivory transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
+            <span className={`block h-0.5 w-6 bg-ivory transition-opacity ${open ? 'opacity-0' : ''}`} />
+            <span className={`block h-0.5 w-6 bg-ivory transition-transform ${open ? '-translate-y-2 -rotate-45' : ''}`} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -64,11 +100,28 @@ export default function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-3 text-base text-text-secondary transition-colors hover:text-ivory border-b border-border-neutral last:border-0"
+              className="block py-3 text-base text-text-secondary transition-colors hover:text-ivory border-b border-border-neutral"
             >
               {l.label}
             </a>
           ))}
+
+          {/* Mobile contact info */}
+          <div className="py-3 border-b border-border-neutral space-y-2">
+            <a href="tel:+79064968802" className="flex items-center gap-2.5 text-sm text-text-secondary hover:text-ivory transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+              +7 (906) 496-88-02
+            </a>
+            <a href="mailto:info@qwik.pro" className="flex items-center gap-2.5 text-sm text-text-secondary hover:text-ivory transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              info@qwik.pro
+            </a>
+          </div>
+
           <a
             href="#lead-form"
             onClick={() => setOpen(false)}

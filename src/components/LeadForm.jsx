@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { sendToTelegram } from '../utils/telegram'
 
 const venueTypes = [
   'Ресторан / Кафе',
@@ -10,11 +11,22 @@ const venueTypes = [
 
 export default function LeadForm() {
   const [form, setForm] = useState({ name: '', phone: '', venue: '' })
+  const [loading, setLoading] = useState(false)
+  const [sent, setSent] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Form submission logic here
-    alert('Спасибо! Мы перезвоним в течение 30 минут.')
+    setLoading(true)
+    const msg = `📋 <b>Новая заявка — Расчёт окупаемости</b>\n\n👤 Имя: ${form.name}\n📱 Телефон: ${form.phone}\n🏢 Тип заведения: ${form.venue}`
+    const { ok } = await sendToTelegram(msg)
+    setLoading(false)
+    if (ok) {
+      setSent(true)
+      setForm({ name: '', phone: '', venue: '' })
+      setTimeout(() => setSent(false), 5000)
+    } else {
+      alert('Не удалось отправить заявку. Позвоните нам: +7 (906) 496-88-02')
+    }
   }
 
   return (
@@ -96,9 +108,10 @@ export default function LeadForm() {
 
           <button
             type="submit"
-            className="w-full rounded-lg bg-ivory px-7 py-4 text-base font-semibold text-emerald-deep transition-colors hover:bg-ivory-hover cursor-pointer"
+            disabled={loading || sent}
+            className="w-full rounded-lg bg-ivory px-7 py-4 text-base font-semibold text-emerald-deep transition-colors hover:bg-ivory-hover cursor-pointer disabled:opacity-60"
           >
-            Получить расчёт бесплатно&ensp;&rarr;
+            {loading ? 'Отправляем...' : sent ? 'Заявка отправлена! ✓' : 'Получить расчёт бесплатно\u2002→'}
           </button>
 
           <p className="mt-4 text-center text-xs text-text-tertiary leading-relaxed">

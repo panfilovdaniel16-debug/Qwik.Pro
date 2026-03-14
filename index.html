@@ -13,5 +13,29 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Twin24 Chat Widget -->
+    <div id="chat-client" style="z-index: 1000000;"></div>
+    <script src="https://twin24.ai/app/chat-client/widget.js" charset="utf-8"></script>
+    <script>
+      appChatClient({
+        chatId: 'db543262-dca1-448b-b34f-f016ec3072c0',
+      }, {
+        host: document.getElementById('chat-client'),
+        injectStyles: `
+          [data-id=chat-host] {
+            bottom: 24px !important;
+            left: 24px !important;
+            right: auto !important;
+            align-items: start !important;
+          }
+          [data-id=chat-host] > div:last-child {
+            bottom: 24px !important;
+            left: 24px !important;
+            right: auto !important;
+          }
+        `,
+      })
+    </script>
   </body>
 </html>

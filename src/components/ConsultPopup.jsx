@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
+import { sendToTelegram } from '../utils/telegram'
 
 export default function ConsultPopup() {
   const [visible, setVisible] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const [phone, setPhone] = useState('')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (dismissed) return
-    const timer = setTimeout(() => setVisible(true), 15000) // 15 seconds
+    const timer = setTimeout(() => setVisible(true), 70000) // 70 seconds
     return () => clearTimeout(timer)
   }, [dismissed])
 
@@ -65,10 +67,22 @@ export default function ConsultPopup() {
         />
 
         <button
-          onClick={() => { alert('Спасибо! Перезвоним за 5 минут.'); close() }}
-          className="mt-3 w-full rounded-lg bg-ivory px-5 py-3.5 text-sm font-bold text-emerald-deep transition-colors hover:bg-ivory-hover cursor-pointer"
+          onClick={async () => {
+            setLoading(true)
+            const msg = `☎️ <b>Запрос консультации</b>\n\n📱 Телефон: ${phone}`
+            const { ok } = await sendToTelegram(msg)
+            setLoading(false)
+            if (ok) {
+              close()
+              alert('Спасибо! Перезвоним за 5 минут.')
+            } else {
+              alert('Не удалось отправить заявку. Позвоните нам: +7 (906) 496-88-02')
+            }
+          }}
+          disabled={loading}
+          className="mt-3 w-full rounded-lg bg-ivory px-5 py-3.5 text-sm font-bold text-emerald-deep transition-colors hover:bg-ivory-hover cursor-pointer disabled:opacity-60"
         >
-          Получить консультацию&ensp;&rarr;
+          {loading ? 'Отправляем...' : 'Получить консультацию\u2002→'}
         </button>
 
         <p className="mt-3 text-center text-[11px] text-text-tertiary">

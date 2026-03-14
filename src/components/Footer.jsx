@@ -44,15 +44,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contacts & Social */}
+          {/* Contacts */}
           <div>
             <h4 className="text-sm font-semibold text-ivory mb-4">Связаться</h4>
-            <div className="space-y-3">
-              <a href="tel:+74991000000" className="flex items-center gap-2 text-sm text-text-secondary hover:text-ivory transition-colors">
+            <div className="space-y-3 mb-5">
+              <a href="tel:+79064968802" className="flex items-center gap-2 text-sm text-text-secondary hover:text-ivory transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                 </svg>
-                +7 (499) 100-00-00
+                +7 (906) 496-88-02
               </a>
               <a href="mailto:info@qwik.pro" className="flex items-center gap-2 text-sm text-text-secondary hover:text-ivory transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0">
@@ -62,21 +62,69 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Social links */}
-            <div className="mt-5 flex gap-3">
-              <a href="https://t.me/qwikpro" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-9 h-9 rounded-full bg-ivory/8 border border-border-neutral text-text-secondary hover:text-ivory hover:border-border-accent transition-colors" aria-label="Telegram">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.49 7.87l-1.95 9.19c-.15.67-.54.83-1.1.52l-3.03-2.23-1.46 1.41c-.16.16-.3.3-.61.3l.22-3.06 5.56-5.02c.24-.22-.05-.34-.37-.13l-6.87 4.33-2.96-.93c-.64-.2-.66-.64.14-.95l11.58-4.46c.53-.2 1-.05.85.93z" />
-                </svg>
-              </a>
-              <a href="https://wa.me/74991000000" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-9 h-9 rounded-full bg-ivory/8 border border-border-neutral text-text-secondary hover:text-ivory hover:border-border-accent transition-colors" aria-label="WhatsApp">
+            {/* Messengers */}
+            <h4 className="text-xs font-semibold text-text-tertiary uppercase tracking-widest mb-3">Мессенджеры</h4>
+            <div className="flex flex-wrap gap-2">
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/79064968802?text=Здравствуйте"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                title="WhatsApp"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-[#25D366]/15 border border-[#25D366]/25 text-[#25D366] hover:bg-[#25D366]/25 hover:border-[#25D366]/50 transition-colors"
+              >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 13.96c-.24.68-1.42 1.3-1.96 1.38-.5.08-1.14.11-1.84-.12-.42-.14-.96-.33-1.66-.65-2.92-1.33-4.83-4.28-4.98-4.48-.14-.2-1.18-1.57-1.18-3 0-1.43.75-2.14 1.01-2.43.27-.29.59-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.57.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.28.47-.14.17-.3.37-.42.5-.14.14-.29.3-.12.58.17.29.74 1.22 1.58 1.97 1.09.97 2.01 1.27 2.29 1.41.29.14.45.12.62-.07.17-.2.71-.83.9-1.12.19-.29.38-.24.64-.14.26.1 1.63.77 1.91.91.29.14.48.22.55.33.07.12.07.67-.17 1.35z" />
                 </svg>
               </a>
-              <a href="https://vk.com/qwikpro" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-9 h-9 rounded-full bg-ivory/8 border border-border-neutral text-text-secondary hover:text-ivory hover:border-border-accent transition-colors" aria-label="ВКонтакте">
+
+              {/* Telegram */}
+              <a
+                href="https://t.me/+79064968802"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+                title="Telegram"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-[#229ED9]/15 border border-[#229ED9]/25 text-[#229ED9] hover:bg-[#229ED9]/25 hover:border-[#229ED9]/50 transition-colors"
+              >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12.785 16.241s.288-.032.436-.192c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.598-.188 1.367 1.259 2.182 1.815.616.42 1.084.328 1.084.328l2.175-.03s1.138-.07.598-.964c-.044-.073-.314-.661-1.618-1.869-1.366-1.265-1.183-1.06.462-3.248.998-1.33 1.398-2.143 1.273-2.49-.119-.332-.852-.244-.852-.244l-2.45.015s-.182-.025-.316.056c-.131.079-.216.263-.216.263s-.388 1.032-.905 1.91c-1.091 1.855-1.527 1.953-1.705 1.838-.415-.268-.311-1.076-.311-1.649 0-1.793.272-2.54-.529-2.735-.266-.065-.461-.107-1.14-.114-.87-.009-1.606.003-2.023.208-.278.136-.492.44-.361.457.161.021.527.099.72.363.25.341.24 1.108.24 1.108s.143 2.11-.334 2.372c-.327.18-.776-.187-1.739-1.866-.493-.86-.866-1.81-.866-1.81s-.072-.176-.2-.27c-.155-.116-.372-.152-.372-.152l-2.327.015s-.35.01-.478.162c-.114.135-.009.415-.009.415s1.823 4.267 3.886 6.415c1.89 1.97 4.039 1.839 4.039 1.839z" />
+                  <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.49 7.87l-1.95 9.19c-.15.67-.54.83-1.1.52l-3.03-2.23-1.46 1.41c-.16.16-.3.3-.61.3l.22-3.06 5.56-5.02c.24-.22-.05-.34-.37-.13l-6.87 4.33-2.96-.93c-.64-.2-.66-.64.14-.95l11.58-4.46c.53-.2 1-.05.85.93z" />
+                </svg>
+              </a>
+
+              {/* VKontakte */}
+              <a
+                href="https://vk.com/public211244635"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ВКонтакте"
+                title="ВКонтакте"
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0077FF]/15 border border-[#0077FF]/25 text-[#0077FF] hover:bg-[#0077FF]/25 hover:border-[#0077FF]/50 transition-colors"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm2.18 13.86h-1.61c-.61 0-.8-.49-1.9-1.61-.96-.93-1.51-.93-.59 0-.75.17-.75.99v1.47c0 .28-.09.45-.83.45-1.22 0-2.58-.74-3.53-2.12-1.43-2.04-1.82-3.57-1.82-3.88 0-.18.07-.34.36-.34h1.61c.27 0 .37.13.47.43.52 1.5 1.38 2.81 1.74 2.81.13 0 .19-.06.19-.4v-1.56c-.04-.7-.41-.76-.41-.99 0-.16.13-.33.35-.33h2.53c.21 0 .29.11.29.36v2.1c0 .21.09.28.16.28.13 0 .24-.07.48-.31.74-.83 1.27-2.1 1.27-2.1.07-.15.2-.3.47-.3h1.61c.48 0 .59.25.48.58-.2.93-2.12 3.63-2.12 3.63-.17.28-.23.4 0 .71.17.23.72.71 1.09 1.14.68.77 1.2 1.41 1.34 1.86.15.44-.08.67-.54.67z"/>
+                </svg>
+              </a>
+
+              {/* MAX */}
+              <a
+                href="https://max.ru/u/f9LHodD0cOK7_-1M0o-5bG427whLGMTsJK1hHkGEjHMxCZw00WraU8Ok93Y"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MAX"
+                title="MAX"
+                className="flex items-center justify-center w-9 h-9 rounded-full border border-[#5B6EF5]/25 hover:border-[#5B6EF5]/50 transition-colors"
+                style={{ background: 'rgba(91,110,245,0.15)' }}
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="url(#max-grad)" style={{ color: '#8B7CF5' }}>
+                  <defs>
+                    <linearGradient id="max-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#5B6EF5"/>
+                      <stop offset="100%" stopColor="#A855F7"/>
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#max-grad)" d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-6 9l-2 4-2-4-4 2 2-4-2-4 4 2 2-4 2 4 4-2-2 4 2 4-4-2z"/>
                 </svg>
               </a>
             </div>
@@ -84,11 +132,34 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-border-neutral flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-10 pt-6 border-t border-border-neutral flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-text-tertiary">
             &copy; {new Date().getFullYear()} Qwik.Pro. Все права защищены.
           </p>
-          <p className="text-xs text-text-tertiary">
+
+          {/* Legal links */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a
+              href="#/oferta"
+              className="text-xs text-text-tertiary hover:text-ivory transition-colors underline-offset-2 hover:underline"
+            >
+              Публичная оферта
+            </a>
+            <a
+              href="#/privacy"
+              className="text-xs text-text-tertiary hover:text-ivory transition-colors underline-offset-2 hover:underline"
+            >
+              Политика конфиденциальности
+            </a>
+            <a
+              href="#/consent"
+              className="text-xs text-text-tertiary hover:text-ivory transition-colors underline-offset-2 hover:underline"
+            >
+              Согласие на обработку данных
+            </a>
+          </div>
+
+          <p className="text-xs text-text-tertiary sm:shrink-0">
             Работаем по всей России
           </p>
         </div>

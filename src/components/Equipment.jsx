@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { sendToTelegram } from '../utils/telegram'
 
 const categories = [
   {
@@ -89,7 +90,23 @@ const categories = [
 /* ── Quick-order / KP modal ──────────────────────────── */
 function QuickOrderModal({ product, onClose, mode }) {
   const [form, setForm] = useState({ name: '', phone: '' })
+  const [loading, setLoading] = useState(false)
   const isKP = mode === 'kp'
+
+  const handleOrder = async () => {
+    setLoading(true)
+    const emoji = isKP ? '📄' : '🛒'
+    const title = isKP ? 'Запрос КП' : 'Новый заказ'
+    const msg = `${emoji} <b>${title}</b>\n\n📦 Товар: ${product.name} (${product.variant})\n💰 Цена: ${product.price} ₽\n👤 Имя: ${form.name}\n📱 Телефон: ${form.phone}`
+    const { ok } = await sendToTelegram(msg)
+    setLoading(false)
+    if (ok) {
+      onClose()
+      alert('Спасибо! Перезвоним в течение 5 минут.')
+    } else {
+      alert('Не удалось отправить заявку. Позвоните нам: +7 (906) 496-88-02')
+    }
+  }
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" onClick={onClose}>
@@ -134,10 +151,11 @@ function QuickOrderModal({ product, onClose, mode }) {
         </div>
 
         <button
-          onClick={() => { alert('Спасибо! Перезвоним в течение 5 минут.'); onClose() }}
-          className="mt-4 w-full rounded-xl bg-emerald-deep px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-dark cursor-pointer"
+          onClick={handleOrder}
+          disabled={loading}
+          className="mt-4 w-full rounded-xl bg-emerald-deep px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-dark cursor-pointer disabled:opacity-60"
         >
-          {isKP ? 'Получить КП' : 'Заказать сейчас'}&ensp;&rarr;
+          {loading ? 'Отправляем...' : isKP ? 'Получить КП' : 'Заказать сейчас'}&ensp;&rarr;
         </button>
       </div>
     </div>
