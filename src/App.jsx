@@ -10,7 +10,6 @@ import Payback from './components/Payback'
 import Service from './components/Service'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
-import FloatingButtons from './components/FloatingButtons'
 import ConsultPopup from './components/ConsultPopup'
 import Oferta from './pages/Oferta'
 import Privacy from './pages/Privacy'
@@ -64,7 +63,6 @@ export default function App() {
       <Service />
       <LeadForm />
       <Footer />
-      <FloatingButtons />
       <ConsultPopup />
     </>
   )

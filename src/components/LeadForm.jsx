@@ -43,7 +43,7 @@ export default function LeadForm() {
 
           <p className="mt-5 text-lg text-text-secondary leading-relaxed">
             Подберём комплект под ваши задачи, рассчитаем стоимость и покажем, как система
-            окупается за первые 2–3 месяца работы.
+            окупается за первые недели работы.
           </p>
         </div>
 
