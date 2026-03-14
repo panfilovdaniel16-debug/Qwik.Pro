@@ -6,6 +6,7 @@ import Reliability from './components/Reliability'
 import Clients from './components/Clients'
 import Equipment from './components/Equipment'
 import Rental from './components/Rental'
+import Payback from './components/Payback'
 import Service from './components/Service'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
@@ -59,6 +60,7 @@ export default function App() {
       <Clients />
       <Equipment />
       <Rental />
+      <Payback />
       <Service />
       <LeadForm />
       <Footer />

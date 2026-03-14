@@ -1,5 +1,5 @@
 const stats = [
-  { value: '5 лет', label: 'Гарантия', desc: 'Самая длинная на рынке' },
+  { value: 'до 5 лет', label: 'Гарантия', desc: 'Самая длинная на рынке' },
   { value: '< 0.3 сек', label: 'Доставка вызова', desc: 'Мгновенная реакция' },
   { value: '24/7', label: 'Техподдержка', desc: 'Решение в день обращения' },
   { value: '100%', label: 'Покрытие сигнала', desc: 'Даже через бетон' },
@@ -14,19 +14,19 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-5 pt-28 pb-20 sm:px-8 lg:pt-36 lg:pb-28">
         {/* Tagline */}
         <p className="mb-5 text-sm tracking-[0.2em] uppercase text-text-secondary font-medium">
-          Рестораны&ensp;&middot;&ensp;Кальянные&ensp;&middot;&ensp;Клубы&ensp;&middot;&ensp;Отели
+          Рестораны&ensp;&middot;&ensp;Кальянные&ensp;&middot;&ensp;Компьютерные клубы&ensp;&middot;&ensp;Отели
         </p>
 
         {/* Headline */}
         <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] tracking-tight max-w-4xl">
           Система вызова персонала, которая{' '}
-          <span className="text-ivory">окупается</span>
+          <span className="text-ivory">окупается за&nbsp;14&nbsp;дней</span>
         </h1>
 
         {/* Subheadline */}
         <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-text-secondary">
-          Брендированные кнопки под ваш интерьер. Сигнал без мёртвых зон.
-          Полный контроль каждого вызова. Аренда&nbsp;&mdash; от&nbsp;190&nbsp;&#8381;/мес,
+          Брендированные кнопки под ваш интерьер. Стабильный сигнал без мёртвых зон.
+          Аренда&nbsp;&mdash; от&nbsp;190&nbsp;&#8381;/мес,
           тест-драйв&nbsp;&mdash; 7&nbsp;дней бесплатно.
         </p>
 

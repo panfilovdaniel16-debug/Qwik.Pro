@@ -62,7 +62,7 @@ export default function Rental() {
             <ul className="mt-8 space-y-4 flex-1">
               {[
                 'Замена оборудования при поломке — бесплатно',
-                'Обновление прошивок — бесплатно',
+                'Техподдержка на весь срок аренды — бесплатно',
                 'Переход на выкуп в любой момент, аренда засчитывается',
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-text-secondary">

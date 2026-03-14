@@ -26,15 +26,6 @@ const cards = [
       </svg>
     ),
   },
-  {
-    title: 'Бесплатные обновления',
-    text: 'Новые функции, улучшения стабильности, обновления прошивок — бесплатно на весь срок гарантии. Система становится лучше с каждым месяцем.',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-      </svg>
-    ),
-  },
 ]
 
 export default function Service() {
@@ -46,12 +37,12 @@ export default function Service() {
         </p>
 
         <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight max-w-3xl">
-          Гарантия 5&nbsp;лет&nbsp;&mdash; самая длинная на&nbsp;рынке
+          Гарантия на оборудование&nbsp;&mdash; до&nbsp;5&nbsp;лет
         </h2>
 
         <p className="mt-5 max-w-2xl text-lg text-text-secondary leading-relaxed">
-          Сломалась кнопка? Заменим в течение суток. Ваш бизнес не&nbsp;простаивает ни минуты,
-          пока мы решаем вопрос.
+          Если кнопка выходит из строя&nbsp;&mdash; мы оперативно решаем вопрос с&nbsp;заменой
+          оборудования. Ваш бизнес не&nbsp;простаивает.
         </p>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
