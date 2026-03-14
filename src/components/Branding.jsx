@@ -18,6 +18,8 @@ const galleryImages = [
   { src: '/images/branding/organizer-branding.jpg', alt: 'Деревянный органайзер с логотипом и кнопкой' },
   { src: '/images/branding/poker-table.jpg', alt: 'Кнопки вызова на покерном столе' },
   { src: '/images/branding/poker-close.jpg', alt: 'Покер-клуб — кнопки вызова крупным планом' },
+  { src: '/images/branding/rave-buster.jpg', alt: 'RAVE by Buster — брендированная кнопка вызова' },
+  { src: '/images/branding/potter-bar.png', alt: 'У Поттера — кнопка вызова в бар-музее' },
 ]
 
 /* ─── Feature cards ─── */
@@ -199,6 +201,10 @@ export default function Branding() {
             </button>
           ))}
         </div>
+
+        <p className="mt-5 text-center text-sm text-text-secondary">
+          Это лишь малая часть наших кейсов — остальные пришлём по&nbsp;запросу.
+        </p>
 
         {/* ─── Feature cards ─── */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
