@@ -53,13 +53,13 @@ export default function Header() {
 
           {/* Email */}
           <a
-            href="mailto:info@qwik.pro"
+            href="mailto:sales@qwik.pro"
             className="flex items-center gap-2 text-sm text-text-secondary hover:text-ivory transition-colors group"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0 text-text-tertiary group-hover:text-ivory transition-colors">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
             </svg>
-            info@qwik.pro
+            sales@qwik.pro
           </a>
 
           {/* Messengers */}
@@ -130,11 +130,11 @@ export default function Header() {
               </svg>
               +7 (906) 496-88-02
             </a>
-            <a href="mailto:info@qwik.pro" className="flex items-center gap-2.5 text-sm text-text-secondary hover:text-ivory transition-colors">
+            <a href="mailto:sales@qwik.pro" className="flex items-center gap-2.5 text-sm text-text-secondary hover:text-ivory transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
               </svg>
-              info@qwik.pro
+              sales@qwik.pro
             </a>
             <div className="flex gap-2 pt-1">
               <a href="https://wa.me/79064968802?text=Здравствуйте" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" onClick={() => reachGoal('click_whatsapp')} className="flex items-center justify-center w-8 h-8 rounded-full bg-[#25D366]/15 border border-[#25D366]/25 text-[#25D366] hover:bg-[#25D366]/25 transition-colors">

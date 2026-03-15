@@ -82,7 +82,7 @@ export default function Consent({ onBack }) {
       <h2 className="text-lg sm:text-xl font-semibold text-ivory mb-4">Срок действия и отзыв согласия</h2>
 
       <P>
-        Настоящее согласие действует до момента его отзыва субъектом персональных данных. Отзыв осуществляется путём направления письменного заявления на адрес электронной почты <a href="mailto:info@qwik.pro" className="text-ivory hover:underline">info@qwik.pro</a>.
+        Настоящее согласие действует до момента его отзыва субъектом персональных данных. Отзыв осуществляется путём направления письменного заявления на адрес электронной почты <a href="mailto:sales@qwik.pro" className="text-ivory hover:underline">sales@qwik.pro</a>.
       </P>
       <P>
         В случае отзыва согласия Оператор обязан прекратить обработку персональных данных и уничтожить их в течение 30 дней с момента получения соответствующего заявления, если иное не предусмотрено действующим законодательством Российской Федерации.
@@ -100,7 +100,7 @@ export default function Consent({ onBack }) {
         <p>ИП Кешенеев Руфат Рустамович</p>
         <p>ИНН: 262308877507</p>
         <p>Телефон: <a href="tel:+79064968802" className="text-ivory hover:underline">+7 (906) 496-88-02</a></p>
-        <p>Email: <a href="mailto:info@qwik.pro" className="text-ivory hover:underline">info@qwik.pro</a></p>
+        <p>Email: <a href="mailto:sales@qwik.pro" className="text-ivory hover:underline">sales@qwik.pro</a></p>
         <p>Сайт: <a href="https://qwik.pro" className="text-ivory hover:underline" target="_blank" rel="noopener noreferrer">qwik.pro</a></p>
       </div>
     </LegalPage>
