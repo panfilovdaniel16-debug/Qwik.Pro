@@ -22,7 +22,7 @@ export default function CookieBanner() {
   if (!visible) return null
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-sm z-[90] animate-fade-in-up">
+    <div className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-sm z-[1000001] animate-fade-in-up">
       <div className="rounded-2xl bg-white shadow-2xl border border-gray-100 p-4 sm:p-5">
         <div className="flex items-start gap-3">
           {/* Cookie icon */}
