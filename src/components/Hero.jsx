@@ -79,11 +79,12 @@ export default function Hero() {
               className="group relative w-full rounded-2xl overflow-hidden border border-ivory/15 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ivory/40 shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
               aria-label="Смотреть видео о Qwik.Pro"
             >
-              <video
-                src="/video/hero.mp4"
-                muted
-                playsInline
-                preload="metadata"
+              <img
+                src="/video/hero-poster.jpg"
+                alt="Видео о системе Qwik.Pro"
+                width={960}
+                height={540}
+                loading="eager"
                 className="w-full aspect-video object-cover"
               />
 
