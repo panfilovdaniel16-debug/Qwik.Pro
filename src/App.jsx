@@ -11,6 +11,7 @@ import Service from './components/Service'
 import LeadForm from './components/LeadForm'
 import Footer from './components/Footer'
 import ConsultPopup from './components/ConsultPopup'
+import CookieBanner from './components/CookieBanner'
 import Oferta from './pages/Oferta'
 import Privacy from './pages/Privacy'
 import Consent from './pages/Consent'
@@ -64,6 +65,7 @@ export default function App() {
       <LeadForm />
       <Footer />
       <ConsultPopup />
+      <CookieBanner />
     </>
   )
 }
