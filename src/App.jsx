@@ -55,10 +55,10 @@ export default function App() {
       <Header />
       <Hero />
       <Branding />
-      <Reliability />
       <Clients />
       <Equipment />
       <Rental />
+      <Reliability />
       <Payback />
       <Service />
       <LeadForm />

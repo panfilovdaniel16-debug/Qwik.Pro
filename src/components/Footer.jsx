@@ -1,3 +1,5 @@
+import { reachGoal } from '../utils/metrika'
+
 export default function Footer() {
   return (
     <footer className="bg-emerald-dark border-t border-border-neutral py-14">
@@ -48,7 +50,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-ivory mb-4">Связаться</h4>
             <div className="space-y-3 mb-5">
-              <a href="tel:+79064968802" className="flex items-center gap-2 text-sm text-text-secondary hover:text-ivory transition-colors">
+              <a href="tel:+79064968802" onClick={() => reachGoal('click_phone')} className="flex items-center gap-2 text-sm text-text-secondary hover:text-ivory transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 shrink-0">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                 </svg>
@@ -72,6 +74,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 title="WhatsApp"
+                onClick={() => reachGoal('click_whatsapp')}
                 className="flex items-center justify-center w-9 h-9 rounded-full bg-[#25D366]/15 border border-[#25D366]/25 text-[#25D366] hover:bg-[#25D366]/25 hover:border-[#25D366]/50 transition-colors"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -86,6 +89,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="Telegram"
                 title="Telegram"
+                onClick={() => reachGoal('click_telegram')}
                 className="flex items-center justify-center w-9 h-9 rounded-full bg-[#229ED9]/15 border border-[#229ED9]/25 text-[#229ED9] hover:bg-[#229ED9]/25 hover:border-[#229ED9]/50 transition-colors"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -100,6 +104,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="ВКонтакте"
                 title="ВКонтакте"
+                onClick={() => reachGoal('click_vk')}
                 className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0077FF]/15 border border-[#0077FF]/25 text-[#0077FF] hover:bg-[#0077FF]/25 hover:border-[#0077FF]/50 transition-colors"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -114,6 +119,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label="MAX"
                 title="MAX"
+                onClick={() => reachGoal('click_max')}
                 className="flex items-center justify-center w-9 h-9 rounded-full border border-[#5B6EF5]/25 hover:border-[#5B6EF5]/50 transition-colors"
                 style={{ background: 'rgba(91,110,245,0.15)' }}
               >

@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { sendToTelegram } from '../utils/telegram'
+import { reachGoal } from '../utils/metrika'
 
 const categories = [
   {
@@ -7,17 +8,17 @@ const categories = [
     label: 'Кнопки вызова',
     description: 'Классические и деревянные кнопки вызова. Брендирование, выбор цвета и материала. Влагозащита IP65.',
     products: [
-      { name: 'Кнопка вызова 1 в 1', variant: 'Серая', brand: 'Qwik.Pro', price: '750', oldPrice: '2 587', rental: '190', img: 'https://qwik.pro/wp-content/uploads/2025/05/ChatGPT-Image-17-dek.-2025-g.-22_33_33-600x600.png' },
-      { name: 'Кнопка вызова 1 в 1', variant: 'Чёрная', brand: 'Qwik.Pro', price: '430', oldPrice: '890', rental: '190', img: 'https://qwik.pro/wp-content/uploads/2025/11/ChatGPT-Image-18-dek.-2025-g.-22_02_31-600x600.png' },
-      { name: 'Кнопка вызова 1 в 1', variant: 'Синяя', brand: 'Qwik.Pro', price: '430', oldPrice: '890', rental: '190', img: 'https://qwik.pro/wp-content/uploads/2025/05/ChatGPT-Image-17-dek.-2025-g.-22_50_38-600x600.png' },
-      { name: 'Кнопка вызова 1 в 1', variant: 'Красная', brand: 'Qwik.Pro', price: '430', oldPrice: '690', rental: '190', img: 'https://qwik.pro/wp-content/uploads/2025/05/Knopka-vyzova-personala-Qwik.pro-1-v-1-krasnaya--600x600.png' },
+      { name: 'Кнопка вызова 1 в 1', variant: 'Серая', brand: 'Qwik.Pro', price: '750', oldPrice: '2 587', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/ChatGPT-Image-17-dek.-2025-g.-22_33_33-600x600.png' },
+      { name: 'Кнопка вызова 1 в 1', variant: 'Чёрная', brand: 'Qwik.Pro', price: '430', oldPrice: '890', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/11/ChatGPT-Image-18-dek.-2025-g.-22_02_31-600x600.png' },
+      { name: 'Кнопка вызова 1 в 1', variant: 'Синяя', brand: 'Qwik.Pro', price: '430', oldPrice: '890', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/ChatGPT-Image-17-dek.-2025-g.-22_50_38-600x600.png' },
+      { name: 'Кнопка вызова 1 в 1', variant: 'Красная', brand: 'Qwik.Pro', price: '430', oldPrice: '690', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/Knopka-vyzova-personala-Qwik.pro-1-v-1-krasnaya--600x600.png' },
       { name: 'Кнопка вызова с подсветкой', variant: 'Классическая', brand: 'Qwik.Pro', price: '990', oldPrice: '1 700', rental: '250', img: 'https://qwik.pro/wp-content/uploads/2023/12/Knopka-vyzova-s-podsvetkoj-1-600x600.png' },
-      { name: 'Кнопка вызова 4 в 1', variant: 'Вызов · Счёт · Отмена · Меню', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-14_10_38-600x600.png' },
-      { name: 'Кнопка вызова 4 в 1', variant: 'Кальян · Вызов · Счёт · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-14_14_25-600x600.png' },
-      { name: 'Кнопка вызова', variant: 'Стандартная', brand: 'Qwik.Pro', price: '350', oldPrice: '890', rental: '190', img: 'https://qwik.pro/wp-content/uploads/2024/07/Knopka-vyzova--600x600.png' },
-      { name: 'Влагостойкая кнопка 1 в 1', variant: 'Чёрная IP65', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-13_48_32-600x600.png' },
-      { name: 'Влагостойкая кнопка 3 в 1', variant: 'Счёт · Вызов · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '886', rental: '220', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-13_51_03-600x600.png' },
-      { name: 'Влагостойкая кнопка 3 в 1', variant: 'Кальян · Вызов · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '886', rental: '220', img: 'https://qwik.pro/wp-content/uploads/2023/07/Vlagostojkaya-knopka-vyzova-ofitsianta-3-v-1-kalyan-vyzov-otmena--600x600.png' },
+      { name: 'Кнопка вызова 4 в 1', variant: 'Вызов · Счёт · Отмена · Меню', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', sub: '4v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-14_10_38-600x600.png' },
+      { name: 'Кнопка вызова 4 в 1', variant: 'Кальян · Вызов · Счёт · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', sub: '4v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-14_14_25-600x600.png' },
+      { name: 'Кнопка вызова', variant: 'Стандартная', brand: 'Qwik.Pro', price: '350', oldPrice: '890', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2024/07/Knopka-vyzova--600x600.png' },
+      { name: 'Влагостойкая кнопка 1 в 1', variant: 'Чёрная IP65', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-13_48_32-600x600.png' },
+      { name: 'Влагостойкая кнопка 3 в 1', variant: 'Счёт · Вызов · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '886', rental: '220', sub: '3v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-13_51_03-600x600.png' },
+      { name: 'Влагостойкая кнопка 3 в 1', variant: 'Кальян · Вызов · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '886', rental: '220', sub: '3v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/Vlagostojkaya-knopka-vyzova-ofitsianta-3-v-1-kalyan-vyzov-otmena--600x600.png' },
       { name: 'Сенсорная кнопка', variant: 'С брендированием', brand: 'Qwik.Pro', price: '590', oldPrice: '1 049', rental: '250', img: 'https://qwik.pro/wp-content/uploads/2023/07/265-600x600.png' },
       { name: 'Сенсорная кнопка на подставке', variant: 'С индивидуальным брендированием', brand: 'Qwik.Pro', price: '1 890', rental: '390', img: 'https://qwik.pro/wp-content/uploads/2025/07/ChatGPT-Image-9-yanv.-2026-g.-13_49_50-600x600.png' },
     ],
@@ -101,6 +102,7 @@ function QuickOrderModal({ product, onClose, mode }) {
     const { ok } = await sendToTelegram(msg)
     setLoading(false)
     if (ok) {
+      reachGoal(isKP ? 'form_kp' : 'form_order', { product: product.name, variant: product.variant })
       onClose()
       alert('Спасибо! Перезвоним в течение 5 минут.')
     } else {
@@ -163,11 +165,50 @@ function QuickOrderModal({ product, onClose, mode }) {
 }
 
 /* ── Main section ────────────────────────────────────── */
+const subCategories = [
+  { id: 'all', label: 'Все' },
+  { id: '1v1', label: '1 в 1' },
+  { id: '3v1', label: '3 в 1' },
+  { id: '4v1', label: '4 в 1' },
+]
+
 export default function Equipment() {
   const [active, setActive] = useState('buttons')
+  const [subFilter, setSubFilter] = useState('all')
   const [orderProduct, setOrderProduct] = useState(null)
   const [orderMode, setOrderMode] = useState('order')
+  const [showFloatingNav, setShowFloatingNav] = useState(false)
   const current = categories.find((c) => c.id === active)
+  const tabsRef = useRef(null)
+  const gridRef = useRef(null)
+
+  const setCategory = (id) => {
+    setActive(id)
+    setSubFilter('all')
+  }
+
+  const scrollToTabs = () => {
+    tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  // Show floating "Other categories" button when tabs are out of viewport
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!tabsRef.current || !gridRef.current) return
+      const tabsRect = tabsRef.current.getBoundingClientRect()
+      const gridRect = gridRef.current.getBoundingClientRect()
+      // Show when tabs are above viewport AND grid is still visible
+      const tabsHidden = tabsRect.bottom < 0
+      const gridVisible = gridRect.bottom > 100
+      setShowFloatingNav(tabsHidden && gridVisible && window.innerWidth < 768)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const filteredProducts = active === 'buttons' && subFilter !== 'all'
+    ? current.products.filter((p) => p.sub === subFilter)
+    : current.products
 
   const openModal = (product, mode) => {
     setOrderProduct(product)
@@ -208,12 +249,12 @@ export default function Equipment() {
         </div>
 
         {/* ── Category tabs ── */}
-        <div className="mt-10 flex flex-wrap gap-2">
+        <div ref={tabsRef} className="mt-10 grid grid-cols-2 gap-2 md:flex md:flex-wrap">
           {categories.map((cat) => (
             <button
               key={cat.id}
-              onClick={() => setActive(cat.id)}
-              className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all cursor-pointer ${
+              onClick={() => setCategory(cat.id)}
+              className={`rounded-full px-4 py-2.5 text-sm font-semibold transition-all cursor-pointer text-center ${
                 active === cat.id
                   ? 'bg-emerald-deep text-white shadow-lg shadow-emerald-deep/20'
                   : 'border border-gray-200 text-gray-500 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50'
@@ -225,27 +266,46 @@ export default function Equipment() {
           ))}
         </div>
 
+        {/* ── Sub-category filters (buttons only) ── */}
+        {active === 'buttons' && (
+          <div className="mt-3 flex gap-1.5 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {subCategories.map((sub) => (
+              <button
+                key={sub.id}
+                onClick={() => setSubFilter(sub.id)}
+                className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-medium transition-all cursor-pointer ${
+                  subFilter === sub.id
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700'
+                }`}
+              >
+                {sub.label}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* ── Category description ── */}
         <p className="mt-5 text-sm text-gray-400 max-w-xl">
           {current.description}
         </p>
 
         {/* ── Product grid ── */}
-        <div className="mt-8 grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {current.products.map((p, i) => (
+        <div ref={gridRef} className="mt-8 grid gap-3 sm:gap-5 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {filteredProducts.map((p, i) => (
             <div
-              key={`${current.id}-${i}`}
+              key={`${current.id}-${subFilter}-${i}`}
               className="group relative bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-gray-200/60 hover:border-gray-300"
             >
               {/* Sale badge */}
               {p.oldPrice && (
-                <div className="absolute top-3 left-3 z-10 rounded-full bg-emerald-deep px-2.5 py-1 text-[10px] font-bold text-white uppercase tracking-wider shadow-sm">
+                <div className="absolute top-2 left-2 sm:top-3 sm:left-3 z-10 rounded-full bg-emerald-deep px-2 py-0.5 sm:px-2.5 sm:py-1 text-[9px] sm:text-[10px] font-bold text-white uppercase tracking-wider shadow-sm">
                   Акция
                 </div>
               )}
 
-              {/* Image area — white, product fills the space */}
-              <div className="relative flex items-center justify-center p-4 aspect-square bg-white">
+              {/* Image area */}
+              <div className="relative flex items-center justify-center p-2 sm:p-4 aspect-square bg-white">
                 <img
                   src={p.img}
                   alt={p.name}
@@ -255,39 +315,39 @@ export default function Equipment() {
               </div>
 
               {/* Info */}
-              <div className="p-5 border-t border-gray-100">
-                <h3 className="text-sm font-bold text-gray-900 leading-tight line-clamp-2">
+              <div className="p-3 sm:p-5 border-t border-gray-100">
+                <h3 className="text-xs sm:text-sm font-bold text-gray-900 leading-tight line-clamp-2">
                   {p.name}
                 </h3>
-                <p className="mt-0.5 text-xs text-gray-400">{p.brand}</p>
+                <p className="mt-0.5 text-xs text-gray-400 hidden sm:block">{p.brand}</p>
 
                 {/* Variant */}
-                <p className="mt-1 text-xs text-gray-500">{p.variant}</p>
+                <p className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-gray-500 line-clamp-1">{p.variant}</p>
 
                 {/* Price block */}
-                <div className="mt-3 flex items-baseline gap-2">
-                  <span className="text-xl font-bold text-gray-900">{p.price} &#8381;</span>
+                <div className="mt-2 sm:mt-3 flex items-baseline gap-1 sm:gap-2">
+                  <span className="text-base sm:text-xl font-bold text-gray-900">{p.price} &#8381;</span>
                   {p.oldPrice && (
-                    <span className="text-xs text-gray-400 line-through">{p.oldPrice} &#8381;</span>
+                    <span className="text-[10px] sm:text-xs text-gray-400 line-through">{p.oldPrice} &#8381;</span>
                   )}
                 </div>
                 {p.rental && (
-                  <p className="mt-1 text-xs text-gray-400">
+                  <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-xs text-gray-400">
                     Аренда от <span className="text-emerald-deep font-semibold">{p.rental} &#8381;/мес</span>
                   </p>
                 )}
 
                 {/* CTAs */}
-                <div className="mt-4 flex flex-col gap-2">
+                <div className="mt-2.5 sm:mt-4 flex flex-col gap-1.5 sm:gap-2">
                   <button
                     onClick={() => openModal(p, 'order')}
-                    className="w-full rounded-xl bg-emerald-deep px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-emerald-dark cursor-pointer"
+                    className="w-full rounded-xl bg-emerald-deep px-2 py-1.5 sm:px-4 sm:py-2.5 text-[11px] sm:text-xs font-bold text-white transition-colors hover:bg-emerald-dark cursor-pointer"
                   >
                     Заказать сейчас
                   </button>
                   <button
                     onClick={() => openModal(p, 'kp')}
-                    className="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-xs font-semibold text-gray-600 transition-colors hover:bg-gray-50 hover:border-gray-300 cursor-pointer"
+                    className="w-full rounded-xl border border-gray-200 px-2 py-1.5 sm:px-4 sm:py-2.5 text-[11px] sm:text-xs font-semibold text-gray-600 transition-colors hover:bg-gray-50 hover:border-gray-300 cursor-pointer"
                   >
                     Получить КП
                   </button>
@@ -296,6 +356,14 @@ export default function Equipment() {
             </div>
           ))}
         </div>
+
+        {/* ── Back to categories (mobile) ── */}
+        <button
+          onClick={scrollToTabs}
+          className="mt-6 w-full rounded-xl border border-gray-200 py-3 text-sm font-semibold text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-700 cursor-pointer md:hidden"
+        >
+          &uarr; Другие категории
+        </button>
 
         {/* ── Bottom CTA ── */}
         <div className="mt-14 text-center">
@@ -307,6 +375,16 @@ export default function Equipment() {
           </a>
         </div>
       </div>
+
+      {/* ── Floating "Other categories" button (mobile) ── */}
+      {showFloatingNav && (
+        <button
+          onClick={scrollToTabs}
+          className="fixed bottom-20 left-1/2 -translate-x-1/2 z-40 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 shadow-lg px-5 py-2.5 text-sm font-semibold text-gray-700 transition-all hover:bg-white cursor-pointer md:hidden"
+        >
+          &uarr; Другие категории
+        </button>
+      )}
 
       {/* Quick order modal */}
       {orderProduct && (

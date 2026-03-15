@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { sendToTelegram } from '../utils/telegram'
+import { reachGoal } from '../utils/metrika'
 
 const venueTypes = [
   'Ресторан / Кафе',
@@ -21,6 +22,7 @@ export default function LeadForm() {
     const { ok } = await sendToTelegram(msg)
     setLoading(false)
     if (ok) {
+      reachGoal('form_lead', { venue: form.venue })
       setSent(true)
       setForm({ name: '', phone: '', venue: '' })
       setTimeout(() => setSent(false), 5000)

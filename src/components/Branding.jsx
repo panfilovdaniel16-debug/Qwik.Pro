@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { sendToTelegram } from '../utils/telegram'
+import { reachGoal } from '../utils/metrika'
 
 /* ─── Gallery images ─── */
 const galleryImages = [
@@ -144,6 +145,7 @@ export default function Branding() {
     const { ok } = await sendToTelegram(msg)
     setLoading(false)
     if (ok) {
+      reachGoal('form_branding')
       setSubmitted(true)
       setForm({ name: '', phone: '' })
       setTimeout(() => setSubmitted(false), 5000)
@@ -298,6 +300,7 @@ export default function Branding() {
                 href="https://wa.me/79064968802?text=Здравствуйте"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => reachGoal('click_whatsapp')}
                 className="flex flex-col items-center gap-2 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 px-3 py-4 text-white transition-all hover:bg-[#25D366]/20 hover:border-[#25D366]/40 hover:scale-[1.02]"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366]">
@@ -313,6 +316,7 @@ export default function Branding() {
                 href="https://t.me/+79064968802"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => reachGoal('click_telegram')}
                 className="flex flex-col items-center gap-2 rounded-xl bg-[#229ED9]/10 border border-[#229ED9]/20 px-3 py-4 text-white transition-all hover:bg-[#229ED9]/20 hover:border-[#229ED9]/40 hover:scale-[1.02]"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#229ED9]">
@@ -328,6 +332,7 @@ export default function Branding() {
                 href="https://vk.com/public211244635"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => reachGoal('click_vk')}
                 className="flex flex-col items-center gap-2 rounded-xl bg-[#0077FF]/10 border border-[#0077FF]/20 px-3 py-4 text-white transition-all hover:bg-[#0077FF]/20 hover:border-[#0077FF]/40 hover:scale-[1.02]"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0077FF]">
@@ -343,6 +348,7 @@ export default function Branding() {
                 href="https://max.ru/u/f9LHodD0cOK7_-1M0o-5bG427whLGMTsJK1hHkGEjHMxCZw00WraU8Ok93Y"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => reachGoal('click_max')}
                 className="flex flex-col items-center gap-2 rounded-xl bg-[#5B6EF5]/10 border border-[#5B6EF5]/20 px-3 py-4 text-white transition-all hover:bg-[#5B6EF5]/20 hover:border-[#5B6EF5]/40 hover:scale-[1.02]"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-full" style={{background: 'linear-gradient(135deg, #5B6EF5, #A855F7)'}}>
@@ -357,6 +363,7 @@ export default function Branding() {
             {/* Phone — full width */}
             <a
               href="tel:+79064968802"
+              onClick={() => reachGoal('click_phone')}
               className="flex items-center gap-4 rounded-xl bg-ivory/5 border border-ivory/10 px-5 py-3.5 text-white transition-all hover:bg-ivory/10 hover:border-ivory/20 hover:scale-[1.02]"
             >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ivory text-emerald-deep">

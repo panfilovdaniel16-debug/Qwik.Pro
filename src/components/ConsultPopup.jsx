@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { sendToTelegram } from '../utils/telegram'
+import { reachGoal } from '../utils/metrika'
 
 export default function ConsultPopup() {
   const [visible, setVisible] = useState(false)
@@ -26,6 +27,12 @@ export default function ConsultPopup() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [dismissed])
+
+  useEffect(() => {
+    if (visible && !dismissed) {
+      reachGoal('popup_consult')
+    }
+  }, [visible, dismissed])
 
   const close = () => {
     setVisible(false)
@@ -73,6 +80,7 @@ export default function ConsultPopup() {
             const { ok } = await sendToTelegram(msg)
             setLoading(false)
             if (ok) {
+              reachGoal('form_consult')
               close()
               alert('Спасибо! Перезвоним за 5 минут.')
             } else {
