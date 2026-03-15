@@ -31,7 +31,7 @@ const categories = [
       { name: 'Часы RETEKESS TD 108', variant: 'Наручные', brand: 'Retekess', price: '3 990', oldPrice: '5 800', rental: '490', img: 'https://qwik.pro/wp-content/uploads/2025/02/ChatGPT-Image-17-dek.-2025-g.-22_26_23-600x600.png' },
       { name: 'Часы-пейджер WB-1', variant: 'Наручные', brand: 'Qwik.Pro', price: '4 390', oldPrice: '6 990', rental: '590', img: 'https://qwik.pro/wp-content/uploads/2024/10/ChatGPT-Image-5-yanv.-2026-g.-12_22_19-600x600.png' },
       { name: 'Часы WL-CW6', variant: 'Влагостойкие', brand: 'Qwik.Pro', price: '4 190', oldPrice: '6 290', rental: '600', img: 'https://qwik.pro/wp-content/uploads/2023/07/chasy-600x600.png' },
-      { name: 'Часы-пейджер WL-CW7C', variant: 'Чёрные, IP67, гарантия 2 года', brand: 'Qwik.Pro', price: '8 500', oldPrice: '11 340', rental: '750', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-12_28_16-600x600.png' },
+      { name: 'Часы-пейджер WL-CW7C', variant: 'Чёрные, IP67, гарантия 2 года', brand: 'Qwik.Pro', price: '8 500', oldPrice: '11 340', rental: '750', img: 'https://qwik.pro/wp-content/uploads/2023/10/ChatGPT-Image-5-yanv.-2026-g.-12_28_16.png' },
     ],
   },
   {
