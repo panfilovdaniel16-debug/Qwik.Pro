@@ -8,47 +8,68 @@
     <meta name="description" content="Брендированные кнопки вызова персонала для ресторанов, кальянных, клубов и отелей. Аренда от 390 ₽/мес, тест-драйв 7 дней бесплатно." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107706876', 'ym');
-      ym(107706876, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <!-- /Yandex.Metrika counter -->
+    <!-- Non-blocking font loading -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   </head>
   <body>
     <noscript><div><img src="https://mc.yandex.ru/watch/107706876" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Twin24 Chat Widget -->
+    <!-- Twin24 Chat Widget — loaded after page is interactive -->
     <div id="chat-client" style="z-index: 1000000;"></div>
-    <script src="https://twin24.ai/app/chat-client/widget.js" charset="utf-8"></script>
+
+    <!-- Deferred loading of external scripts -->
     <script>
-      appChatClient({
-        chatId: 'db543262-dca1-448b-b34f-f016ec3072c0',
-      }, {
-        host: document.getElementById('chat-client'),
-        injectStyles: `
-          [data-id=chat-host] {
-            bottom: 24px !important;
-            right: 24px !important;
-            left: auto !important;
-            width: min(400px, calc(100vw - 32px)) !important;
-            align-items: end !important;
-          }
-          [data-id=chat-host] > div:last-child {
-            bottom: 24px !important;
-            right: 24px !important;
-            left: auto !important;
-          }
-        `,
-      })
+      // Load third-party scripts after the page becomes interactive
+      function loadDeferredScripts() {
+        // Yandex.Metrika
+        window.ym = window.ym || function(){(window.ym.a=window.ym.a||[]).push(arguments)};
+        window.ym.l = 1*new Date();
+        var ys = document.createElement('script');
+        ys.async = true;
+        ys.src = 'https://mc.yandex.ru/metrika/tag.js?id=107706876';
+        document.head.appendChild(ys);
+        ym(107706876, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+
+        // Twin24 chat widget
+        var ts = document.createElement('script');
+        ts.async = true;
+        ts.charset = 'utf-8';
+        ts.src = 'https://twin24.ai/app/chat-client/widget.js';
+        ts.onload = function() {
+          appChatClient({
+            chatId: 'db543262-dca1-448b-b34f-f016ec3072c0',
+          }, {
+            host: document.getElementById('chat-client'),
+            injectStyles: '\
+              [data-id=chat-host] {\
+                bottom: 24px !important;\
+                right: 24px !important;\
+                left: auto !important;\
+                width: min(400px, calc(100vw - 32px)) !important;\
+                align-items: end !important;\
+              }\
+              [data-id=chat-host] > div:last-child {\
+                bottom: 24px !important;\
+                right: 24px !important;\
+                left: auto !important;\
+              }\
+            ',
+          });
+        };
+        document.body.appendChild(ts);
+      }
+
+      // Fire after first paint + a short delay
+      if (document.readyState === 'complete') {
+        setTimeout(loadDeferredScripts, 100);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(loadDeferredScripts, 100);
+        });
+      }
     </script>
   </body>
 </html>

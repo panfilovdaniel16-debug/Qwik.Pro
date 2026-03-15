@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { sendToTelegram } from '../utils/telegram'
 import { reachGoal } from '../utils/metrika'
 
@@ -131,12 +131,52 @@ function Lightbox({ images, index, onClose }) {
   )
 }
 
+/* ─── Lazy image with fade-in ─── */
+function LazyGalleryImage({ src, alt, visible }) {
+  const [loaded, setLoaded] = useState(false)
+  return visible ? (
+    <img
+      src={src}
+      alt={alt}
+      width={300}
+      height={300}
+      decoding="async"
+      loading="lazy"
+      fetchPriority="low"
+      onLoad={() => setLoaded(true)}
+      className={`h-full w-full object-cover transition-all duration-500 group-hover:scale-105 ${
+        loaded ? 'opacity-100' : 'opacity-0'
+      }`}
+    />
+  ) : (
+    <div className="h-full w-full bg-emerald-deep/40" />
+  )
+}
+
 /* ─── Main component ─── */
 export default function Branding() {
   const [lightboxIndex, setLightboxIndex] = useState(null)
   const [form, setForm] = useState({ name: '', phone: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [galleryVisible, setGalleryVisible] = useState(false)
+  const galleryRef = useRef(null)
+
+  useEffect(() => {
+    const el = galleryRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setGalleryVisible(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '300px 0px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -174,19 +214,14 @@ export default function Branding() {
         </p>
 
         {/* ─── Photo gallery ─── */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3">
+        <div ref={galleryRef} className="mt-12 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3">
           {galleryImages.map((img, i) => (
             <button
               key={img.src}
               onClick={() => setLightboxIndex(i)}
               className="group relative rounded-2xl overflow-hidden border border-border-neutral bg-emerald-dark/40 aspect-square cursor-pointer focus:outline-none focus:ring-2 focus:ring-ivory/40"
             >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
+              <LazyGalleryImage src={img.src} alt={img.alt} visible={galleryVisible} />
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
                 <svg

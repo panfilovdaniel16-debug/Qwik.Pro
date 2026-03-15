@@ -309,8 +309,12 @@ export default function Equipment() {
                 <img
                   src={p.img}
                   alt={p.name}
-                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  width={300}
+                  height={300}
+                  decoding="async"
                   loading="lazy"
+                  fetchPriority="low"
+                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
