@@ -13,7 +13,7 @@ export default function Footer() {
               className="h-10 w-auto mb-4"
             />
             <p className="text-sm text-text-secondary leading-relaxed">
-              Системы вызова персонала для&nbsp;HoReCa. Аренда, продажа, сервис&nbsp;24/7.
+              Системы вызова персонала для ресторанов, кафе и&nbsp;отелей. Аренда, продажа, сервис&nbsp;24/7.
             </p>
           </div>
 
