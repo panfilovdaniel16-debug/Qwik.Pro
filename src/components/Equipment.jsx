@@ -229,17 +229,17 @@ export default function Equipment() {
         </h2>
 
         <p className="mt-5 max-w-2xl text-lg text-gray-500 leading-relaxed">
-          Подберём комплект под ваше заведение: от одной кнопки на стойку до полной системы
-          на&nbsp;100+ столов. Каждая единица оборудования&nbsp;&mdash; с&nbsp;гарантией 5&nbsp;лет.
+          Подберём комплект под ваше заведение — от&nbsp;одной кнопки на&nbsp;стойку до&nbsp;полной
+          системы на&nbsp;100+ столов. Сейчас скидки почти на&nbsp;весь ассортимент.
         </p>
 
         {/* ── Advantages strip ── */}
         <div className="mt-10 flex flex-wrap gap-3">
           {[
-            { icon: '₽', text: 'Аренда от 190 ₽/мес' },
-            { icon: '★', text: 'Гарантия до 5 лет' },
-            { icon: '↻', text: 'Обменный фонд' },
-            { icon: '✓', text: 'Бесплатный расчёт' },
+            { icon: '₽', text: 'Аренда от 190 ₽/мес · покупка от 350 ₽' },
+            { icon: '↻', text: 'Трейд-ин старого оборудования' },
+            { icon: '✦', text: 'Тест-драйв 7 дней бесплатно' },
+            { icon: '∞', text: 'Техподдержка без ограничений' },
           ].map((a) => (
             <span key={a.text} className="inline-flex items-center gap-2 rounded-full bg-emerald-deep/5 border border-emerald-deep/10 px-4 py-2 text-xs font-semibold text-emerald-deep">
               <span className="opacity-60">{a.icon}</span>
