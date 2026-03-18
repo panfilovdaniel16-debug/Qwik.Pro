@@ -8,19 +8,19 @@ const categories = [
     label: 'Кнопки вызова',
     description: 'Классические и деревянные кнопки вызова. Брендирование, выбор цвета и материала. Влагозащита IP65.',
     products: [
-      { name: 'Кнопка вызова 1 в 1', variant: 'Серая', brand: 'Qwik.Pro', price: '750', oldPrice: '2 587', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/ChatGPT-Image-17-dek.-2025-g.-22_33_33-600x600.png' },
-      { name: 'Кнопка вызова 1 в 1', variant: 'Чёрная', brand: 'Qwik.Pro', price: '430', oldPrice: '890', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/11/ChatGPT-Image-18-dek.-2025-g.-22_02_31-600x600.png' },
-      { name: 'Кнопка вызова 1 в 1', variant: 'Синяя', brand: 'Qwik.Pro', price: '430', oldPrice: '890', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/ChatGPT-Image-17-dek.-2025-g.-22_50_38-600x600.png' },
-      { name: 'Кнопка вызова 1 в 1', variant: 'Красная', brand: 'Qwik.Pro', price: '430', oldPrice: '690', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/Knopka-vyzova-personala-Qwik.pro-1-v-1-krasnaya--600x600.png' },
-      { name: 'Кнопка вызова с подсветкой', variant: 'Классическая', brand: 'Qwik.Pro', price: '990', oldPrice: '1 700', rental: '250', img: 'https://qwik.pro/wp-content/uploads/2023/12/Knopka-vyzova-s-podsvetkoj-1-600x600.png' },
-      { name: 'Кнопка вызова 4 в 1', variant: 'Вызов · Счёт · Отмена · Меню', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', sub: '4v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-14_10_38-600x600.png' },
-      { name: 'Кнопка вызова 4 в 1', variant: 'Кальян · Вызов · Счёт · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', sub: '4v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-14_14_25-600x600.png' },
-      { name: 'Кнопка вызова', variant: 'Стандартная', brand: 'Qwik.Pro', price: '350', oldPrice: '890', rental: '190', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2024/07/Knopka-vyzova--600x600.png' },
-      { name: 'Влагостойкая кнопка 1 в 1', variant: 'Чёрная IP65', brand: 'Qwik.Pro', price: '550', oldPrice: '890', rental: '220', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-13_48_32-600x600.png' },
-      { name: 'Влагостойкая кнопка 3 в 1', variant: 'Счёт · Вызов · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '886', rental: '220', sub: '3v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-13_51_03-600x600.png' },
-      { name: 'Влагостойкая кнопка 3 в 1', variant: 'Кальян · Вызов · Отмена', brand: 'Qwik.Pro', price: '550', oldPrice: '886', rental: '220', sub: '3v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/Vlagostojkaya-knopka-vyzova-ofitsianta-3-v-1-kalyan-vyzov-otmena--600x600.png' },
-      { name: 'Сенсорная кнопка', variant: 'С брендированием', brand: 'Qwik.Pro', price: '590', oldPrice: '1 049', rental: '250', img: 'https://qwik.pro/wp-content/uploads/2023/07/265-600x600.png' },
-      { name: 'Сенсорная кнопка на подставке', variant: 'С индивидуальным брендированием', brand: 'Qwik.Pro', price: '1 890', rental: '390', img: 'https://qwik.pro/wp-content/uploads/2025/07/ChatGPT-Image-9-yanv.-2026-g.-13_49_50-600x600.png' },
+      { name: 'Кнопка вызова 1 в 1', variant: 'Серая', brand: 'Qwik.Pro', price: '862', oldPrice: '2 975', rental: '218', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/ChatGPT-Image-17-dek.-2025-g.-22_33_33-600x600.png' },
+      { name: 'Кнопка вызова 1 в 1', variant: 'Чёрная', brand: 'Qwik.Pro', price: '494', oldPrice: '1 023', rental: '218', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/11/ChatGPT-Image-18-dek.-2025-g.-22_02_31-600x600.png' },
+      { name: 'Кнопка вызова 1 в 1', variant: 'Синяя', brand: 'Qwik.Pro', price: '494', oldPrice: '1 023', rental: '218', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/ChatGPT-Image-17-dek.-2025-g.-22_50_38-600x600.png' },
+      { name: 'Кнопка вызова 1 в 1', variant: 'Красная', brand: 'Qwik.Pro', price: '494', oldPrice: '793', rental: '218', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2025/05/Knopka-vyzova-personala-Qwik.pro-1-v-1-krasnaya--600x600.png' },
+      { name: 'Кнопка вызова с подсветкой', variant: 'Классическая', brand: 'Qwik.Pro', price: '1 139', oldPrice: '1 955', rental: '288', img: 'https://qwik.pro/wp-content/uploads/2023/12/Knopka-vyzova-s-podsvetkoj-1-600x600.png' },
+      { name: 'Кнопка вызова 4 в 1', variant: 'Вызов · Счёт · Отмена · Меню', brand: 'Qwik.Pro', price: '633', oldPrice: '1 023', rental: '253', sub: '4v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-14_10_38-600x600.png' },
+      { name: 'Кнопка вызова 4 в 1', variant: 'Кальян · Вызов · Счёт · Отмена', brand: 'Qwik.Pro', price: '633', oldPrice: '1 023', rental: '253', sub: '4v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-14_14_25-600x600.png' },
+      { name: 'Кнопка вызова', variant: 'Стандартная', brand: 'Qwik.Pro', price: '402', oldPrice: '1 023', rental: '218', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2024/07/Knopka-vyzova--600x600.png' },
+      { name: 'Влагостойкая кнопка 1 в 1', variant: 'Чёрная IP65', brand: 'Qwik.Pro', price: '633', oldPrice: '1 023', rental: '253', sub: '1v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-13_48_32-600x600.png' },
+      { name: 'Влагостойкая кнопка 3 в 1', variant: 'Счёт · Вызов · Отмена', brand: 'Qwik.Pro', price: '633', oldPrice: '1 019', rental: '253', sub: '3v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-5-yanv.-2026-g.-13_51_03-600x600.png' },
+      { name: 'Влагостойкая кнопка 3 в 1', variant: 'Кальян · Вызов · Отмена', brand: 'Qwik.Pro', price: '633', oldPrice: '1 019', rental: '253', sub: '3v1', img: 'https://qwik.pro/wp-content/uploads/2023/07/Vlagostojkaya-knopka-vyzova-ofitsianta-3-v-1-kalyan-vyzov-otmena--600x600.png' },
+      { name: 'Сенсорная кнопка', variant: 'С брендированием', brand: 'Qwik.Pro', price: '679', oldPrice: '1 206', rental: '288', img: 'https://qwik.pro/wp-content/uploads/2023/07/265-600x600.png' },
+      { name: 'Сенсорная кнопка на подставке', variant: 'С индивидуальным брендированием', brand: 'Qwik.Pro', price: '2 174', rental: '448', img: 'https://qwik.pro/wp-content/uploads/2025/07/ChatGPT-Image-9-yanv.-2026-g.-13_49_50-600x600.png' },
     ],
   },
   {
@@ -28,10 +28,10 @@ const categories = [
     label: 'Часы-пейджеры',
     description: 'Наручные часы для официантов с вибрацией и номером стола на экране. Лёгкие, незаметные, с зарядкой на полную смену.',
     products: [
-      { name: 'Часы RETEKESS TD 108', variant: 'Наручные', brand: 'Retekess', price: '3 990', oldPrice: '5 800', rental: '490', img: 'https://qwik.pro/wp-content/uploads/2025/02/ChatGPT-Image-17-dek.-2025-g.-22_26_23-600x600.png' },
-      { name: 'Часы-пейджер WB-1', variant: 'Наручные', brand: 'Qwik.Pro', price: '4 390', oldPrice: '6 990', rental: '590', img: 'https://qwik.pro/wp-content/uploads/2024/10/ChatGPT-Image-5-yanv.-2026-g.-12_22_19-600x600.png' },
-      { name: 'Часы WL-CW6', variant: 'Влагостойкие', brand: 'Qwik.Pro', price: '4 190', oldPrice: '6 290', rental: '600', img: 'https://qwik.pro/wp-content/uploads/2023/07/chasy-600x600.png' },
-      { name: 'Часы-пейджер WL-CW7C', variant: 'Чёрные, IP67, гарантия 2 года', brand: 'Qwik.Pro', price: '8 500', oldPrice: '11 340', rental: '750', img: 'https://qwik.pro/wp-content/uploads/2023/10/ChatGPT-Image-5-yanv.-2026-g.-12_28_16.png' },
+      { name: 'Часы RETEKESS TD 108', variant: 'Наручные', brand: 'Retekess', price: '4 589', oldPrice: '6 670', rental: '564', img: 'https://qwik.pro/wp-content/uploads/2025/02/ChatGPT-Image-17-dek.-2025-g.-22_26_23-600x600.png' },
+      { name: 'Часы-пейджер WB-1', variant: 'Наручные', brand: 'Qwik.Pro', price: '5 049', oldPrice: '8 038', rental: '679', img: 'https://qwik.pro/wp-content/uploads/2024/10/ChatGPT-Image-5-yanv.-2026-g.-12_22_19-600x600.png' },
+      { name: 'Часы WL-CW6', variant: 'Влагостойкие', brand: 'Qwik.Pro', price: '4 819', oldPrice: '7 233', rental: '690', img: 'https://qwik.pro/wp-content/uploads/2023/07/chasy-600x600.png' },
+      { name: 'Часы-пейджер WL-CW7C', variant: 'Чёрные, IP67, гарантия 2 года', brand: 'Qwik.Pro', price: '9 775', oldPrice: '13 041', rental: '862', img: 'https://qwik.pro/wp-content/uploads/2023/10/ChatGPT-Image-5-yanv.-2026-g.-12_28_16.png' },
     ],
   },
   {
@@ -39,13 +39,13 @@ const categories = [
     label: 'Пейджеры',
     description: 'Пейджеры оповещения о готовности заказа. Для фудкортов, кофеен и ресторанов с самообслуживанием.',
     products: [
-      { name: 'Пейджеры WL-CQ12', variant: 'Чёрные, комплект', brand: 'Qwik.Pro', price: '12 000', oldPrice: '17 500', img: 'https://qwik.pro/wp-content/uploads/2023/06/1025-600x600.png' },
-      { name: 'Пейджеры TD 157', variant: 'Чёрные, комплект', brand: 'Retekess', price: '14 490', img: 'https://qwik.pro/wp-content/uploads/2023/06/650-600x600.png' },
-      { name: 'Пейджеры TD 157', variant: 'Белые, комплект', brand: 'Retekess', price: '14 490', img: 'https://qwik.pro/wp-content/uploads/2023/06/595-600x600.png' },
-      { name: 'Пейджеры WL-CQ1', variant: 'С вибрацией, чёрные', brand: 'Qwik.Pro', price: '16 300', img: 'https://qwik.pro/wp-content/uploads/2023/10/2190-600x600.png' },
-      { name: 'Пейджер TD 157', variant: 'Чёрный, 1 шт.', brand: 'Retekess', price: '999', img: 'https://qwik.pro/wp-content/uploads/2023/06/670-600x600.png' },
-      { name: 'Пейджер TD 157', variant: 'Белый, 1 шт.', brand: 'Retekess', price: '999', img: 'https://qwik.pro/wp-content/uploads/2023/06/645-600x600.png' },
-      { name: 'Пейджер WL-CQ12', variant: 'Чёрный, 1 шт.', brand: 'Qwik.Pro', price: '1 190', img: 'https://qwik.pro/wp-content/uploads/2023/06/1055-600x600.png' },
+      { name: 'Пейджеры WL-CQ12', variant: 'Чёрные, комплект', brand: 'Qwik.Pro', price: '13 800', oldPrice: '20 125', img: 'https://qwik.pro/wp-content/uploads/2023/06/1025-600x600.png' },
+      { name: 'Пейджеры TD 157', variant: 'Чёрные, комплект', brand: 'Retekess', price: '16 664', img: 'https://qwik.pro/wp-content/uploads/2023/06/650-600x600.png' },
+      { name: 'Пейджеры TD 157', variant: 'Белые, комплект', brand: 'Retekess', price: '16 664', img: 'https://qwik.pro/wp-content/uploads/2023/06/595-600x600.png' },
+      { name: 'Пейджеры WL-CQ1', variant: 'С вибрацией, чёрные', brand: 'Qwik.Pro', price: '18 745', img: 'https://qwik.pro/wp-content/uploads/2023/10/2190-600x600.png' },
+      { name: 'Пейджер TD 157', variant: 'Чёрный, 1 шт.', brand: 'Retekess', price: '1 149', img: 'https://qwik.pro/wp-content/uploads/2023/06/670-600x600.png' },
+      { name: 'Пейджер TD 157', variant: 'Белый, 1 шт.', brand: 'Retekess', price: '1 149', img: 'https://qwik.pro/wp-content/uploads/2023/06/645-600x600.png' },
+      { name: 'Пейджер WL-CQ12', variant: 'Чёрный, 1 шт.', brand: 'Qwik.Pro', price: '1 369', img: 'https://qwik.pro/wp-content/uploads/2023/06/1055-600x600.png' },
     ],
   },
   {
@@ -53,7 +53,7 @@ const categories = [
     label: 'Усилители',
     description: 'Расширяют зону покрытия до 3 000 м². Решают проблему мёртвых зон в цокольных этажах и за бетонными стенами.',
     products: [
-      { name: 'Усилитель сигнала', variant: 'Покрытие до 3 000 м²', brand: 'Qwik.Pro', price: '3 490', oldPrice: '7 690', rental: '500', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-17-dek.-2025-g.-22_40_46-600x600.png' },
+      { name: 'Усилитель сигнала', variant: 'Покрытие до 3 000 м²', brand: 'Qwik.Pro', price: '4 013', oldPrice: '8 844', rental: '575', img: 'https://qwik.pro/wp-content/uploads/2023/07/ChatGPT-Image-17-dek.-2025-g.-22_40_46-600x600.png' },
     ],
   },
   {
@@ -61,7 +61,7 @@ const categories = [
     label: 'Передатчики',
     description: 'Кухонные передатчики для вызова персонала. Совместимы со всеми устройствами Qwik.Pro.',
     products: [
-      { name: 'Кухонный передатчик', variant: '999 каналов', brand: 'Qwik.Pro', price: '3 490', oldPrice: '7 600', rental: '600', img: '/images/transmitter.png' },
+      { name: 'Кухонный передатчик', variant: '999 каналов', brand: 'Qwik.Pro', price: '4 013', oldPrice: '8 740', rental: '690', img: '/images/transmitter.png' },
     ],
   },
   {
@@ -69,11 +69,11 @@ const categories = [
     label: 'Рации',
     description: 'Для координации команды в больших заведениях. Связь между залом, кухней и менеджером — без задержек.',
     products: [
-      { name: 'Рация SR 610', variant: 'Профессиональная', brand: 'Qwik.Pro', price: '3 562', oldPrice: '5 578', rental: '650', img: 'https://qwik.pro/wp-content/uploads/2024/11/photo_2024-11-24_10-24-56-3.jpg' },
-      { name: 'Рация R26', variant: 'Компактная', brand: 'Qwik.Pro', price: '2 845', oldPrice: '3 790', rental: '550', img: 'https://qwik.pro/wp-content/uploads/2023/06/520-600x600.png' },
-      { name: 'Рация Yanton S8', variant: 'Бюджетная', brand: 'Qwik.Pro', price: '1 917', oldPrice: '2 990', rental: '600', img: 'https://qwik.pro/wp-content/uploads/2023/10/2160-600x600.png' },
-      { name: 'Наушники для рации', variant: 'Проводные', brand: 'Qwik.Pro', price: '250', oldPrice: '390', img: 'https://qwik.pro/wp-content/uploads/2023/06/585-600x600.png' },
-      { name: 'Наушники для рации', variant: 'Вакуумные', brand: 'Qwik.Pro', price: '350', oldPrice: '490', img: 'https://qwik.pro/wp-content/uploads/2023/06/945-600x600.png' },
+      { name: 'Рация SR 610', variant: 'Профессиональная', brand: 'Qwik.Pro', price: '4 096', oldPrice: '6 415', rental: '747', img: 'https://qwik.pro/wp-content/uploads/2024/11/photo_2024-11-24_10-24-56-3.jpg' },
+      { name: 'Рация R26', variant: 'Компактная', brand: 'Qwik.Pro', price: '3 272', oldPrice: '4 359', rental: '633', img: 'https://qwik.pro/wp-content/uploads/2023/06/520-600x600.png' },
+      { name: 'Рация Yanton S8', variant: 'Бюджетная', brand: 'Qwik.Pro', price: '2 205', oldPrice: '3 438', rental: '690', img: 'https://qwik.pro/wp-content/uploads/2023/10/2160-600x600.png' },
+      { name: 'Наушники для рации', variant: 'Проводные', brand: 'Qwik.Pro', price: '288', oldPrice: '448', img: 'https://qwik.pro/wp-content/uploads/2023/06/585-600x600.png' },
+      { name: 'Наушники для рации', variant: 'Вакуумные', brand: 'Qwik.Pro', price: '402', oldPrice: '564', img: 'https://qwik.pro/wp-content/uploads/2023/06/945-600x600.png' },
     ],
   },
   {
@@ -81,9 +81,9 @@ const categories = [
     label: 'Органайзеры',
     description: 'Настольные органайзеры с местом под кнопку вызова. Удобство для гостей и порядок на столе.',
     products: [
-      { name: 'Органайзер', variant: '4 отсека + кнопка', brand: 'Qwik.Pro', price: '1 376', img: '/images/organizer-4-otseka.png' },
-      { name: 'Органайзер', variant: '5 отсеков + кнопка', brand: 'Qwik.Pro', price: '1 528', img: '/images/organizer-5-otsekov.png' },
-      { name: 'Органайзер', variant: 'Премиум с кнопкой', brand: 'Qwik.Pro', price: '1 987', img: '/images/organizer-premium.png' },
+      { name: 'Органайзер', variant: '4 отсека + кнопка', brand: 'Qwik.Pro', price: '1 582', img: '/images/organizer-4-otseka.png' },
+      { name: 'Органайзер', variant: '5 отсеков + кнопка', brand: 'Qwik.Pro', price: '1 757', img: '/images/organizer-5-otsekov.png' },
+      { name: 'Органайзер', variant: 'Премиум с кнопкой', brand: 'Qwik.Pro', price: '2 285', img: '/images/organizer-premium.png' },
     ],
   },
 ]
@@ -236,7 +236,7 @@ export default function Equipment() {
         {/* ── Advantages strip ── */}
         <div className="mt-10 flex flex-wrap gap-3">
           {[
-            { icon: '₽', text: 'Аренда от 190 ₽/мес · покупка от 350 ₽' },
+            { icon: '₽', text: 'Аренда от 218 ₽/мес · покупка от 402 ₽' },
             { icon: '↻', text: 'Трейд-ин старого оборудования' },
             { icon: '✦', text: 'Тест-драйв 7 дней бесплатно' },
             { icon: '∞', text: 'Техподдержка без ограничений' },

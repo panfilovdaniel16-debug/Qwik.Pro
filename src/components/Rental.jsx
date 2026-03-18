@@ -55,7 +55,7 @@ export default function Rental() {
             </span>
             <h3 className="font-serif text-2xl font-semibold text-ivory">Аренда</h3>
             <div className="mt-4 flex items-baseline gap-2">
-              <span className="font-serif text-4xl font-bold text-ivory">от 190 &#8381;</span>
+              <span className="font-serif text-4xl font-bold text-ivory">от 218 &#8381;</span>
               <span className="text-text-secondary text-sm">/мес за единицу</span>
             </div>
 
